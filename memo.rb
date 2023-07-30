@@ -15,19 +15,19 @@ memo_type = gets.to_i # ユーザーの入力値を取得し、数字へ変換�
         puts "完了したらCtr + D を押します。"
         memo = STDIN.read
        
-         CSV.open("#{file_name}","a") do |csv|
-             csv<<["#{memo}"]
-  end
+         CSV.open("#{file_name}.csv","w") do |csv|
+         csv<<["#{memo}"]
+    end
     elsif memo_type == 2
-        puts "既存ファイルを保存します。拡張子を除いたファイルを入力してください"
+        puts "拡張子を除いたファイルを入力してください"
         file_name =gets.chomp
          puts "メモしたい内容を記入してください"
         puts "完了したらCtr + D を押します。"
         memo = STDIN.read
      
-         CSV.open("#{file_name}","a") do |csv|
-             csv<<["#{memo}"]
-  end
+         CSV.open("#{file_name}.csv","a") do |csv|
+         csv<<["#{memo}"]
+    end
     else
         exit
     end
